@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio Navbar Sample</title>
@@ -33,7 +37,7 @@
     }
     .nav-links {
       display: flex;
-      gap: 2.4vw;
+      gap: 1.0vw;
       flex: 1;
       justify-content: flex-end;
       align-items: center;
@@ -48,9 +52,40 @@
       transition: color 0.2s;
       padding: 3px 0;
     }
-    .nav-link:hover {
-      color: #61dafb;
-    }
+    .nav-link {
+  position: relative;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 3px 0;
+  transition: color 0.2s;
+}
+
+/* Remove color change on hover if you have it */
+.nav-link:hover {
+  color: #fff;
+}
+
+/* Add animated underline effect */
+.nav-link::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -6px; /* Adjust distance below text */
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
     .cta-btn {
       margin-left: 2vw;
       background: #fff;
@@ -67,7 +102,7 @@
       transition: background 0.2s, color 0.2s;
     }
     .cta-btn:hover {
-      background: #61dafb;
+      background: #2eea08;
       color: #111;
     }
     @media (max-width: 700px) {
@@ -75,20 +110,91 @@
       .nav-links { flex-wrap: wrap; gap: 1vw;}
       .cta-btn { margin-left: 0; margin-top: 8px; }
     }
+    .site-footer {
+  background: #0a0a0a;
+  color: #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.3rem 3vw 1.3rem 3vw;
+  font-size: 1.07rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 999;
+  box-sizing: border-box;
+}
+.footer-left strong {
+  color: #fff;
+}
+.footer-right {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+}
+.footer-right a {
+  color: #fff;
+  margin-left: 12px;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+.footer-right a:hover {
+  color: #27c419;
+}
+@media (max-width: 700px) {
+  .site-footer {
+    flex-direction: column;
+    font-size: 0.98rem;
+    gap: 10px;
+  }
+  .footer-right a {
+    font-size: 1.2rem;
+    margin-left: 12px;
+  }
+}
+.logo img {
+  opacity: 0.6;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+}
+
+.logo img:hover {
+  opacity: 1;
+}
+
+
+
+</style>
+
+
   </style>
 </head>
 <body>
   <div class="navbar">
     <div class="logo">
         <img src="aslogo-removebg-preview.png" alt="Logo" style="height:90px; width: 140px; vertical-align:middle;">
+         
     </div>
     <div class="nav-links">
-      <a class="nav-link" href="#work">Work</a>
-      <a class="nav-link" href="#process">Process</a>
-      <a class="nav-link" href="#team">Team</a>
-      <a class="nav-link" href="#blog">Blog</a>
-      <button class="cta-btn">Let's Talk</button>
+      <a class="nav-link" href="#work">About</a>
+      <a class="nav-link" href="#process">Projects</a>
+      <a class="nav-link" href="#team">Contact</a>
+      <a class="nav-link" href="#blog">Home</a>
     </div>
   </div>
+  <footer class="site-footer">
+  <div class="footer-left">
+    &copy; 2025 / <strong>Ameer Sawad</strong>
+  </div>
+  <div class="footer-right">
+    <a href="https://github.com/ameeraiml13" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/ameer-sawad-b86b4733a/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.instagram.com/justt.ameeerr?igsh=MXYzOW1lNjY1ODk1dw%3D%3D&utm_source=qr" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+
+  </div>
+</footer>
 </body>
 </html>
